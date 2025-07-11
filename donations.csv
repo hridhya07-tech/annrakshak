@@ -1,0 +1,9 @@
+Donor Name,Food Type,Quantity,Location,Time Since Cooked,Storage Method,Timestamp,Safe to Donate,Previous Hash
+Tanushri,Rice,4 kg,Mayur vihar,4 hr,Refrigerated,04-07-2025 20:30,Yes,GENESIS
+Tanushri,rice,4 kg,mayur vihar phase 2,4 hrs,Room Temperature,04-07-2025 22:08,Yes,86c0309aa1c1a814a5ed268e50977b1470afee24970c70a73fdc2806fa1dafca
+Jayashri,Chapati,4 kg,vinod nagar,3 hrs,Covered,04-07-2025 22:22,Yes,630e7c930d8ddbcd96e84b3b6a67e4e86897c3192edc2ea0b8f327f3e251bd36
+Misheka,Noodles,7 kg,Noida,1 hr,Room Temperature,04-07-2025 22:39,Yes,1dbc6fa404110e3f20c103213dd3d31676e0eec60f3738e95ab7a62d68185600
+Misheka,Noodles,7 kg,Noida,1 hr,Room Temperature,04-07-2025 22:45,Yes,177c7eb75584b0c669d695a0801d74c0560e40410b1837480b1085181ad1c0bb
+Ravi,Idli,1 kg,Pandav nagar,2 hr,Room Temperature,04-07-2025 22:46,Yes,3c64f40c9cb963e561b2218f2fa27ccbe65787650c4946f42ab54ecee4f73a77
+Ravi,Idli,1 kg,Pandav nagar,2 hr,Room Temperature,04-07-2025 22:50,Yes,5d94c2f820264401d00a2d045b1978afe8d3bbb479abf9ef24064023e1f7bd5b
+Ram,rice,5 plates,mayur vihar phase 2,2,Refrigerated,05-07-2025 19:43,No,a6a5dc6f2ea02c4f3e123def42633820d72d676ebdf212fa00018bf6c6408ce4

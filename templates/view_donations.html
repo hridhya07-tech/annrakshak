@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Donations - AnnRakshak</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-image: url('{{ url_for('static', filename='bg_view.jpg') }}');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+           text-align: center;
+        }
+
+        h1 {
+            color: #2b4f81;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2b4f81;
+            color: white;
+        }
+
+        iframe {
+            border-radius: 6px;
+        }
+
+        .back-btn {
+            background-color: #2b4f81;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            background-color: #1a365d;
+        }
+    </style>
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: 'en', includedLanguages: 'en,hi,ta,te,bn,ml,gu,kn,mr,ur', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+      'google_translate_element'
+    );
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+   
+</head>
+<body>
+
+    <h1>📋 All Food Donations</h1>
+
+    <table>
+        <tr>
+            <th>Donor Name</th>
+            <th>Food Type</th>
+            <th>Quantity</th>
+            <th>Location</th>
+            <th>Time Cooked</th>
+            <th>Storage Method</th>
+            <th>Timestamp</th>
+            <th>Safe to Donate</th>
+            <th>Claimed By</th>
+            <th>Status</th>
+            <th>ETA</th>
+            <th>📍 Map</th>
+        </tr>
+
+        {% for row in donations %}
+        <tr>
+            <td>{{ row[0] }}</td> <!-- Donor Name -->
+            <td>{{ row[1] }}</td> <!-- Food Type -->
+            <td>{{ row[2] }}</td> <!-- Quantity -->
+            <td>{{ row[3] }}</td> <!-- Location -->
+            <td>{{ row[4] }}</td> <!-- Time Since Cooked -->
+            <td>{{ row[5] }}</td> <!-- Storage -->
+            <td>{{ row[6] }}</td> <!-- Timestamp -->
+            <td>{{ row[7] }}</td> <!-- Safe to Donate -->
+            <td>{{ row[8] if row|length > 8 else '—' }}</td> <!-- Claimed By -->
+            <td>{{ row[9] if row|length > 9 else '—' }}</td> <!-- Status -->
+            <td>{{ row[10] if row|length > 10 else '—' }}</td> <!-- ETA -->
+            <td>
+                {% if row[3] %}
+                <iframe 
+                    width="200" 
+                    height="150"
+                    src="https://www.google.com/maps?q={{ row[3]|urlencode }}&output=embed"
+                    allowfullscreen>
+                </iframe>
+                {% else %}
+                No Location
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a class="back-btn" href="/">⬅ Back to Home</a>
+<div class="footer-banner">
+    📬 Contact us: annrakshak.help@gmail.com       +91 97177 93305  +91 85274 98622
+</div>
+
+<style>
+.footer-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right, #0077b6, #00b4d8);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 999;
+    animation: slidein 15s linear infinite;
+}
+
+@keyframes slidein {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+</body>
+</html>

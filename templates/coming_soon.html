@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ feature }} - Coming Soon</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            background-image: url('{{ url_for('static', filename='bg_aifoodqualityscanner.jpg') }}');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+        img {
+            width: 400px;
+            margin-top: 30px;
+        }
+        .text {
+            font-size: 20px;
+            color: #333;
+            margin-top: 20px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            color: #0077b6;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: 'en', includedLanguages: 'en,hi,ta,te,bn,ml,gu,kn,mr,ur', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+      'google_translate_element'
+    );
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+<body>
+
+    <h1>{{ feature }}</h1>
+
+    <img src="{{ url_for('static', filename='comingsoon.png') }}" alt="Coming Soon">
+
+    <p class="text">
+        We're working on integrating AI to automatically check food freshness using images.<br>
+        This feature is part of our next big update!
+    </p>
+
+    <p style="font-style: italic; color: #888;">Stay tuned ✨</p>
+
+    <a href="/">⬅ Back to Home</a>
+<div class="footer-banner">
+    📬 Contact us: annrakshak.help@gmail.com       +91 97177 93305  +91 85274 98622
+</div>
+
+<style>
+.footer-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right, #0077b6, #00b4d8);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 999;
+    animation: slidein 15s linear infinite;
+}
+
+@keyframes slidein {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+</body>
+</html>

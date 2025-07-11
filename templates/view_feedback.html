@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Feedback - AnnRakshak</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+
+
+    body {
+      background-image: url('{{ url_for('static', filename='bg_viewfeedback.jpg') }}');
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.92);
+      max-width: 90%;
+      margin: 60px auto;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: #0077b6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      background-color: #fdfdfd;
+    }
+
+    th {
+      background-color: #0077b6;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #eef9ff;
+    }
+
+    .safe { color: green; font-weight: bold; }
+    .warn { color: orange; font-weight: bold; }
+    .unsafe { color: red; font-weight: bold; }
+  </style>
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: 'en', includedLanguages: 'en,hi,ta,te,bn,ml,gu,kn,mr,ur', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+      'google_translate_element'
+    );
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <h1>📋 NGO Feedback & Reports</h1>
+  {% if feedback %}
+  <table>
+    <tr>
+      <th>NGO Name</th>
+      <th>Food Item</th>
+      <th>Feedback Type</th>
+      <th>Comments</th>
+      <th>Timestamp</th>
+    </tr>
+    {% for row in feedback %}
+    <tr>
+      <td>{{ row[0] }}</td>
+      <td>{{ row[1] }}</td>
+      <td>
+        {% if 'Safe' in row[2] %}
+          <span class="safe">{{ row[2] }}</span>
+        {% elif 'Slightly' in row[2] %}
+          <span class="warn">{{ row[2] }}</span>
+        {% else %}
+          <span class="unsafe">{{ row[2] }}</span>
+        {% endif %}
+      </td>
+      <td>{{ row[3] }}</td>
+      <td>{{ row[4] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p>No feedback received yet.</p>
+  {% endif %}
+</div>
+<div class="footer-banner">
+    📬 Contact us: annrakshak.help@gmail.com       +91 97177 93305  +91 85274 98622
+</div>
+
+<style>
+.footer-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right, #0077b6, #00b4d8);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 999;
+    animation: slidein 15s linear infinite;
+}
+
+@keyframes slidein {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+</body>
+</html>

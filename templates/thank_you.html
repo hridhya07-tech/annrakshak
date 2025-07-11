@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 60px;
+            background-color: #f4f9ff;
+        }
+        .btn {
+            padding: 12px 24px;
+            background-color: #2b4f81;
+            color: white;
+            font-size: 16px;
+            border: none;
+            text-decoration: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        h1 {
+            color: #2b4f81;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Thank you {{ donor_name }} for your safe food donation!</h1>
+    <p>You're eligible for a Certificate of Contribution.</p>
+    <form action="/certificate" method="post">
+        <input type="hidden" name="name" value="{{ donor_name }}">
+        <input type="submit" class="btn" value="Download Certificate">
+    </form>
+    <br>
+    <a class="btn" href="/">⬅ Back to Home</a>
+</body>
+</html>

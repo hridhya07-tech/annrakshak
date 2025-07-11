@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make a Food Donation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+background: url('{{ url_for('static', filename='bg_donate.jpg') }}') no-repeat center center fixed;
+ background-size: cover;
+            background-color: #f2f8fc;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            width: auto;
+        }
+        button {
+            background-color: #0077b6;
+            color: white;
+            padding: 12px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005f8a;
+        }
+    </style>
+
+    <!-- Google Translate -->
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+</head>
+
+<body>
+    <!-- Language dropdown -->
+    <div id="google_translate_element" style="text-align: right;"></div>
+
+    <h2>Make a Food Donation</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Your Name</label>
+        <input type="text" name="donor_name" required>
+
+        <label>Food Type</label>
+        <input type="text" name="food_type" required>
+
+        <label>Quantity (e.g., 5 plates, 2kg)</label>
+        <input type="text" name="quantity" required>
+
+        <label>Pickup Location</label>
+        <input type="text" name="location" required>
+
+        <label>Time Since Cooked (in hours)</label>
+        <input type="number" name="time_cooked" required>
+
+        <label>Storage Method</label>
+        <select name="storage_method" required>
+            <option value="">-- Select --</option>
+            <option value="Room Temperature">Room Temperature</option>
+            <option value="Refrigerated">Refrigerated</option>
+            <option value="Frozen">Frozen</option>
+        </select>
+
+        <label>Upload Food Photo (optional)</label>
+        <input type="file" name="photo">
+
+        <label>
+            <input type="checkbox" name="safe_to_donate" value="Yes"> I confirm this food is safe to donate
+        </label>
+
+        <button type="submit">Make a Food Donation</button>
+    </form>
+
+    <p style="margin-top: 15px; font-size: 13px;">* Your contribution helps reduce food waste and feed the hungry.</p>
+<div class="footer-banner">
+    📬 Contact us: annrakshak.help@gmail.com       +91 97177 93305  +91 85274 98622
+</div>
+
+<style>
+.footer-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right, #0077b6, #00b4d8);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 999;
+    animation: slidein 15s linear infinite;
+}
+
+@keyframes slidein {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+</body>
+</html>

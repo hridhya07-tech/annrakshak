@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AnnRakshak - Home</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('{{ url_for('static', filename='bg_home.jpg') }}') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 60px 20px 40px 20px;
+      min-height: 100vh;
+    }
+
+    img.logo {
+      width: 130px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .button {
+      background-color: #0077b6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .button:hover {
+      background-color: #005f8a;
+    }
+
+    .founder-note {
+      margin: 50px auto 20px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      border-radius: 10px;
+      color: #2b4f81;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #ddd;
+      margin-top: 30px;
+    }
+  </style>
+<p style="font-weight: bold; color: white; background-color: #006400; display: inline-block; padding: 8px 12px; border-radius: 8px;">
+    {{ chain_status }}
+</p>
+
+</head>
+<body>
+
+  <div class="overlay">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="AnnRakshak Logo" class="logo">
+
+    <h1>Welcome to AnnRakshak</h1>
+    <p>Your contribution helps reduce food waste and feed the hungry</p>
+
+    <!-- Feature Buttons -->
+    <div class="button-container">
+      <a class="button" href="/donate">🍲 Make a Food Donation</a>
+      <a class="button" href="/view">📋 View Donations</a>
+      <a class="button" href="/certificate">📄 Get Certificate</a>
+      <a class="button" href="/learning">🎓 Learning Dashboard</a>
+      <a class="button" href="/claim">🤝 NGO Claim</a>
+      <a class="button" href="/feedback">📝 Feedback</a>
+      <a class="button" href="/view_feedback">👁️ View Feedback</a>
+      <a class="button" href="/payment">💰 Support via Paytm</a>
+      <a class="button" href="/ai-scan">🧠 AI Food Quality Scanner</a>
+      <a class="button" href="/verify-chain">Verify Log Integrity</a>
+
+</div>
+
+  <!-- Founder’s Note -->
+<div class="founder-note">
+  <h2>💬 Founder’s Note</h2>
+  <p style="font-size: 18px; line-height: 1.6;">
+    “I believe every extra meal has the power to feed a soul in need. With <strong>AnnRakshak</strong>, I dream of building a bridge between generosity and hunger. Let’s unite to make every grain count.”
+  </p>
+  <p style="font-style: italic;">— Tanushri<br>Founder of AnnRakshak</p>
+</div>
+
+<!-- Co-Founder’s Note -->
+<div class="founder-note" style="margin-top: 20px;">
+  <h2>🤝 Co-Founder’s Note</h2>
+  <p style="font-size: 18px; line-height: 1.6;">
+    “Being part of this journey has taught me how even small actions can have a big impact. Through AnnRakshak, I hope we inspire youth to care, share, and serve humanity with compassion.”
+  </p>
+  <p style="font-style: italic;">— Sanskriti Kanoujia<br>Co-Founder of AnnRakshak</p>
+</div>
+<div style="background-color: #f0f9ff; padding: 25px; margin: 40px auto; border-radius: 12px; width: 85%; text-align: center;">
+  <h2 style="color: #2b4f81;">🧠 AI Food Quality Scanner</h2>
+  <p style="font-size: 17px; color: #333; max-width: 800px; margin: auto;">
+    This experimental feature uses AI to scan uploaded food images and estimate their freshness level based on visual cues such as color, texture, and moisture. It helps NGOs assess whether the food is safe for donation — reducing human error and improving food safety.
+  </p>
+  <p style="color: #555; font-style: italic;">“A smarter way to make every bite count — safely.”</p>
+</div>
+
+
+  </div>
+
+  <footer>
+    &copy; 2025 AnnRakshak | Made with ❤️ by Tanushri
+  </footer>
+<div class="footer-banner">
+    📬 Contact us: annrakshak.help@gmail.com       +91 97177 93305  +91 85274 98622
+</div>
+
+<style>
+.footer-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right, #0077b6, #00b4d8);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 999;
+    animation: slidein 15s linear infinite;
+}
+
+@keyframes slidein {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
+</body>
+</html>
