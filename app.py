@@ -24,6 +24,30 @@ def index():
 def compute_hash(row):
     row_string = ','.join(str(i) for i in row)
     return hashlib.sha256(row_string.encode()).hexdigest()
+@app.route('/contribute')
+def contribute():
+    return render_template('contribute.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        with open('users.csv', 'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                if row and row[1] == email and row[2] == password:
+                    role = row[3]
+                    if role == 'ngo':
+                        return redirect('/claim')
+                    else:
+                        return redirect('/donate')
+
+        return "Invalid credentials!"
+
+    return render_template('login.html')
+
 
 @app.route('/donate', methods=['GET', 'POST'])
 def donate():
@@ -199,6 +223,22 @@ def learning_dashboard():
         pass
 
     return render_template('learning.html', total_meals=total_meals, badge=badge)
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        password = request.form['password']
+        role = request.form['role']
+
+        with open('users.csv', 'a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow([name, email, password, role])
+
+        return redirect('/login')
+
+    return render_template('signup.html')
+
 
 @app.route('/feedback', methods=['GET', 'POST'])
 def feedback():

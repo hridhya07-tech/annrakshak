@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contribute - AnnRakshak</title>
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='bg/contribute-bg.jpg') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            padding-top: 100px;
+        }
+        .box {
+            background-color: rgba(0,0,0,0.7);
+            display: inline-block;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        img.qr {
+            width: 250px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Support AnnRakshak</h1>
+        <p>Help us reduce food waste and feed the needy by supporting us.</p>
+
+        <h3>📲 Pay via Paytm</h3>
+        <img src="{{ url_for('static', filename='paytm_qr.jpg') }}" alt="Paytm QR" class="qr">
+        <p>Scan the QR code using Paytm or any UPI app</p>
+        <p><strong>UPI ID:</strong> yourname@paytm</p>
+
+        <h3>🏦 Bank Transfer</h3>
+        <p><strong>Account Name:</strong> AnnRakshak Foundation</p>
+        <p><strong>Account Number:</strong> 1234567890</p>
+        <p><strong>IFSC Code:</strong> ABCD0123456</p>
+        <p><strong>Bank:</strong> State Bank of India</p>
+    </div>
+</body>
+</html>
